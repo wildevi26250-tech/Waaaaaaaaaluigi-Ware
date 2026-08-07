@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c6pt33ipvx0tl"]
 
 [ext_resource type="Texture2D" uid="uid://bblr3y84f0u2f" path="res://Untitled design.png" id="1_2n61g"]
+[ext_resource type="Script" uid="uid://cbpbsuxgl0xes" path="res://minigame_1.gd" id="1_wh6qq"]
 [ext_resource type="PackedScene" uid="uid://dmkop1t4laari" path="res://player.tscn" id="2_gi7k6"]
 [ext_resource type="Texture2D" uid="uid://dwe6qsxokx33d" path="res://Garlic.png" id="3_0hvi2"]
+[ext_resource type="Script" uid="uid://c83hdixs56tkt" path="res://garlic.gd" id="3_r6gmb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfs2c"]
 size = Vector2(1236, 107)
@@ -52,6 +54,7 @@ _data = {
 radius = 228.51465
 
 [node name="minigame_1" type="Node2D" unique_id=1488721184]
+script = ExtResource("1_wh6qq")
 
 [node name="Scrolling Background" type="Parallax2D" parent="." unique_id=981972214]
 repeat_size = Vector2(1000, 0)
@@ -125,10 +128,11 @@ shape = SubResource("RectangleShape2D_gi7k6")
 position = Vector2(110, 505)
 scale = Vector2(0.49, 0.49)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=788898968]
+[node name="Garlic" type="Node2D" parent="." unique_id=788898968]
 position = Vector2(0, 33)
+script = ExtResource("3_r6gmb")
 
-[node name="Garlic" type="TextureRect" parent="Node2D" unique_id=1944423196]
+[node name="Garlic" type="TextureRect" parent="Garlic" unique_id=1944423196]
 offset_left = 929.0
 offset_top = 418.0
 offset_right = 1429.001
@@ -136,21 +140,21 @@ offset_bottom = 918.00116
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("3_0hvi2")
 
-[node name="animation" type="AnimationPlayer" parent="Node2D" unique_id=10871912]
+[node name="animation" type="AnimationPlayer" parent="Garlic" unique_id=10871912]
 libraries/ = SubResource("AnimationLibrary_r6gmb")
 
-[node name="Area2D" type="Area2D" parent="Node2D" unique_id=1135264250]
+[node name="Area2D" type="Area2D" parent="Garlic" unique_id=1135264250]
 position = Vector2(929, 418)
 scale = Vector2(0.26, 0.26)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=820149704]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=820149704]
 position = Vector2(250, 265.38464)
 shape = SubResource("CircleShape2D_wh6qq")
 
-[node name="Node2D2" type="Node2D" parent="." unique_id=902255095]
+[node name="Garlic2" type="Node2D" parent="." unique_id=902255095]
 position = Vector2(-212, -94)
 
-[node name="Garlic" type="TextureRect" parent="Node2D2" unique_id=135249420]
+[node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=135249420]
 offset_left = 929.0
 offset_top = 418.0
 offset_right = 1429.001
@@ -158,21 +162,21 @@ offset_bottom = 918.00116
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("3_0hvi2")
 
-[node name="animation" type="AnimationPlayer" parent="Node2D2" unique_id=367255439]
+[node name="animation" type="AnimationPlayer" parent="Garlic2" unique_id=367255439]
 libraries/ = SubResource("AnimationLibrary_r6gmb")
 
-[node name="Area2D" type="Area2D" parent="Node2D2" unique_id=75173892]
+[node name="Area2D" type="Area2D" parent="Garlic2" unique_id=75173892]
 position = Vector2(929, 418)
 scale = Vector2(0.26, 0.26)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Area2D" unique_id=1287798745]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic2/Area2D" unique_id=1287798745]
 position = Vector2(250, 265.38464)
 shape = SubResource("CircleShape2D_wh6qq")
 
-[node name="Node2D3" type="Node2D" parent="." unique_id=1195871851]
+[node name="Garlic3" type="Node2D" parent="." unique_id=1195871851]
 position = Vector2(-452, -155)
 
-[node name="Garlic" type="TextureRect" parent="Node2D3" unique_id=183702378]
+[node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=183702378]
 offset_left = 929.0
 offset_top = 418.0
 offset_right = 1429.001
@@ -180,21 +184,21 @@ offset_bottom = 918.00116
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("3_0hvi2")
 
-[node name="animation" type="AnimationPlayer" parent="Node2D3" unique_id=1934869330]
+[node name="animation" type="AnimationPlayer" parent="Garlic3" unique_id=1934869330]
 libraries/ = SubResource("AnimationLibrary_r6gmb")
 
-[node name="Area2D" type="Area2D" parent="Node2D3" unique_id=790062807]
+[node name="Area2D" type="Area2D" parent="Garlic3" unique_id=790062807]
 position = Vector2(929, 418)
 scale = Vector2(0.26, 0.26)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/Area2D" unique_id=774207476]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic3/Area2D" unique_id=774207476]
 position = Vector2(250, 265.38464)
 shape = SubResource("CircleShape2D_wh6qq")
 
-[node name="Node2D4" type="Node2D" parent="." unique_id=1311443384]
+[node name="Garlic4" type="Node2D" parent="." unique_id=1311443384]
 position = Vector2(-841, -216)
 
-[node name="Garlic" type="TextureRect" parent="Node2D4" unique_id=480723277]
+[node name="Garlic" type="TextureRect" parent="Garlic4" unique_id=480723277]
 offset_left = 929.0
 offset_top = 418.0
 offset_right = 1429.001
@@ -202,13 +206,13 @@ offset_bottom = 918.00116
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("3_0hvi2")
 
-[node name="animation" type="AnimationPlayer" parent="Node2D4" unique_id=597613858]
+[node name="animation" type="AnimationPlayer" parent="Garlic4" unique_id=597613858]
 libraries/ = SubResource("AnimationLibrary_r6gmb")
 
-[node name="Area2D" type="Area2D" parent="Node2D4" unique_id=1264970839]
+[node name="Area2D" type="Area2D" parent="Garlic4" unique_id=1264970839]
 position = Vector2(929, 418)
 scale = Vector2(0.26, 0.26)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/Area2D" unique_id=1823986841]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic4/Area2D" unique_id=1823986841]
 position = Vector2(250, 265.38464)
 shape = SubResource("CircleShape2D_wh6qq")
