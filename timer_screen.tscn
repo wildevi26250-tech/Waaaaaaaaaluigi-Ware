@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b5lj1t8n55akc"]
+
+[ext_resource type="Script" uid="uid://o3dtnjaqtlmw" path="res://themed_timer.gd" id="1_k5vih"]
+
+[node name="timer_screen" type="Node2D" unique_id=892998699]
+script = ExtResource("1_k5vih")
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=683016780]
+clip_contents = false
+offset_left = 7.0
+offset_right = 232.0
+offset_bottom = 171.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "0.0"
