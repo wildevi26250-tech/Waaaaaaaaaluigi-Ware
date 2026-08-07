@@ -1,3 +1,60 @@
 [gd_scene format=3 uid="uid://b7i2q1mk64y26"]
 
+[ext_resource type="Script" uid="uid://che8vim6yxyne" path="res://timer_screen.gd" id="1_3mivm"]
+[ext_resource type="Texture2D" uid="uid://dfj2ui6sbwnwn" path="res://WaluigiWare_Background.png" id="1_187gu"]
+[ext_resource type="Texture2D" uid="uid://dwe6qsxokx33d" path="res://Garlic.png" id="2_187gu"]
+
 [node name="level_scene" type="Node2D" unique_id=589203081]
+script = ExtResource("1_3mivm")
+
+[node name="Level_BG" type="TextureRect" parent="." unique_id=1271237999]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_187gu")
+
+[node name="GarlicContainer" type="HBoxContainer" parent="." unique_id=212341755]
+offset_left = 193.99997
+offset_top = 1.0
+offset_right = 2710.0
+offset_bottom = 501.0
+scale = Vector2(0.38, 0.38)
+
+[node name="Garlic" type="TextureRect" parent="GarlicContainer" unique_id=335259081]
+layout_mode = 2
+texture = ExtResource("2_187gu")
+
+[node name="Garlic2" type="TextureRect" parent="GarlicContainer" unique_id=41627334]
+layout_mode = 2
+texture = ExtResource("2_187gu")
+
+[node name="Garlic3" type="TextureRect" parent="GarlicContainer" unique_id=690633605]
+layout_mode = 2
+texture = ExtResource("2_187gu")
+
+[node name="Garlic4" type="TextureRect" parent="GarlicContainer" unique_id=379665551]
+layout_mode = 2
+texture = ExtResource("2_187gu")
+
+[node name="Garlic5" type="TextureRect" parent="GarlicContainer" unique_id=1054254972]
+layout_mode = 2
+texture = ExtResource("2_187gu")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=2076725936]
+offset_left = 560.0
+offset_top = 290.0
+offset_right = 758.0
+offset_bottom = 350.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=311231479]
+offset_left = 564.0
+offset_top = 402.0
+offset_right = 746.0
+offset_bottom = 479.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0
+"
