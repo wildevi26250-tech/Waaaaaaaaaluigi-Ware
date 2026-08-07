@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://bheb20wyv3aah"
+path="res://.godot/imported/Waluigi.gif-a1ed96dfabfb7dfe9f9143181a6c8f43.tres"
+
+[deps]
+
+source_file="res://Waluigi.gif"
+dest_files=["res://.godot/imported/Waluigi.gif-a1ed96dfabfb7dfe9f9143181a6c8f43.tres"]
+
+[params]
+
+frames_per_second=30
