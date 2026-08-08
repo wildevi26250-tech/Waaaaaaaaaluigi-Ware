@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://5li754o4sxyq"]
+
+[ext_resource type="Texture2D" uid="uid://bblr3y84f0u2f" path="res://Untitled design.png" id="1_ex68u"]
+[ext_resource type="Texture2D" uid="uid://cwtwbsrublcfp" path="res://waluigi-sad.png" id="1_if853"]
+
+[node name="death_screen" type="Node2D" unique_id=1352724434]
+
+[node name="Scrolling Background" type="Parallax2D" parent="." unique_id=2024502855]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Scrolling Background" unique_id=1659478774]
+offset_right = 2093.3333
+offset_bottom = 1290.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_ex68u")
+
+[node name="sad_waluigi" type="TextureRect" parent="." unique_id=350051131]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.63, 1.63)
+texture = ExtResource("1_if853")
+
+[node name="Lose_text" type="RichTextLabel" parent="." unique_id=844605971]
+clip_contents = false
+offset_left = 387.0
+offset_top = 15.0
+offset_right = 861.0
+offset_bottom = 190.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "You lost "
+shortcut_keys_enabled = false
+
+[node name="Sad_text" type="RichTextLabel" parent="." unique_id=1088010369]
+clip_contents = false
+offset_left = 82.0
+offset_top = 565.0
+offset_right = 1408.0
+offset_bottom = 740.0
+theme_override_constants/outline_size = 27
+theme_override_font_sizes/normal_font_size = 40
+text = "(Now nintendo will never make a waluigi ware game)"
+shortcut_keys_enabled = false

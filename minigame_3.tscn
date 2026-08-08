@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cy0u0674167m2"]
+
+[ext_resource type="PackedScene" uid="uid://lroeksmxtbbp" path="res://paddle.tscn" id="1_t3ksd"]
+[ext_resource type="Texture2D" uid="uid://6ui7hk5k1f2a" path="res://ball.png" id="2_gqi5c"]
+
+[node name="Minigame_3" type="Node2D" unique_id=2010709746]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=916649353]
+position = Vector2(576, 324)
+
+[node name="Paddle" parent="." unique_id=205368971 instance=ExtResource("1_t3ksd")]
+position = Vector2(574, 560)
+
+[node name="Ball" type="Sprite2D" parent="." unique_id=1165344528]
+position = Vector2(1109, 34.000015)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_gqi5c")
