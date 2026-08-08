@@ -1,17 +1,65 @@
 [gd_scene format=3 uid="uid://cy0u0674167m2"]
 
+[ext_resource type="Script" uid="uid://drdfmx6s1wixv" path="res://minigame_3.gd" id="1_cdg48"]
 [ext_resource type="PackedScene" uid="uid://lroeksmxtbbp" path="res://paddle.tscn" id="1_t3ksd"]
-[ext_resource type="Texture2D" uid="uid://6ui7hk5k1f2a" path="res://ball.png" id="2_gqi5c"]
+[ext_resource type="Texture2D" uid="uid://bblr3y84f0u2f" path="res://Untitled design.png" id="2_1i1uu"]
+[ext_resource type="PackedScene" uid="uid://d0ec065ia4s8v" path="res://ball.tscn" id="2_gqi5c"]
+[ext_resource type="PackedScene" uid="uid://b5lj1t8n55akc" path="res://themed_timer.tscn" id="4_33dbb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqi5c"]
+size = Vector2(27, 659)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xr8p"]
+size = Vector2(27, 1201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33dbb"]
+size = Vector2(49.75, 1152)
 
 [node name="Minigame_3" type="Node2D" unique_id=2010709746]
+script = ExtResource("1_cdg48")
+
+[node name="Scrolling Background" type="Parallax2D" parent="." unique_id=1134613811]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Scrolling Background" unique_id=978709378]
+offset_right = 2093.3333
+offset_bottom = 1290.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_1i1uu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=916649353]
 position = Vector2(576, 324)
 
 [node name="Paddle" parent="." unique_id=205368971 instance=ExtResource("1_t3ksd")]
-position = Vector2(574, 560)
+position = Vector2(558, 606)
 
-[node name="Ball" type="Sprite2D" parent="." unique_id=1165344528]
-position = Vector2(1109, 34.000015)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_gqi5c")
+[node name="ball" parent="." unique_id=1287265866 instance=ExtResource("2_gqi5c")]
+position = Vector2(783, 282)
+
+[node name="walls" type="StaticBody2D" parent="." unique_id=693421604]
+
+[node name="Left wall" type="CollisionShape2D" parent="walls" unique_id=1749559066]
+position = Vector2(-15, 321)
+shape = SubResource("RectangleShape2D_gqi5c")
+
+[node name="Right wall" type="CollisionShape2D" parent="walls" unique_id=360944448]
+position = Vector2(1165.5, 325)
+shape = SubResource("RectangleShape2D_5xr8p")
+
+[node name="Celling" type="CollisionShape2D" parent="walls" unique_id=487581267]
+position = Vector2(576.5, -14.9999895)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_5xr8p")
+
+[node name="Death_zone" type="Area2D" parent="." unique_id=1098088943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_zone" unique_id=745119146]
+position = Vector2(574, 673.875)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_33dbb")
+
+[node name="ThemedTimer" parent="." unique_id=892998699 instance=ExtResource("4_33dbb")]
+position = Vector2(873, 19)
+
+[connection signal="body_entered" from="Death_zone" to="ball" method="_on_death_zone_body_entered"]
