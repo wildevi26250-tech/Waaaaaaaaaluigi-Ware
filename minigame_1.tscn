@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dmkop1t4laari" path="res://player.tscn" id="2_gi7k6"]
 [ext_resource type="Texture2D" uid="uid://dwe6qsxokx33d" path="res://Garlic.png" id="3_0hvi2"]
 [ext_resource type="Script" uid="uid://c83hdixs56tkt" path="res://garlic.gd" id="3_r6gmb"]
+[ext_resource type="PackedScene" uid="uid://b1ik40giafm24" path="res://timer_screen.tscn" id="6_or1ld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfs2c"]
 size = Vector2(1236, 107)
@@ -153,6 +154,7 @@ shape = SubResource("CircleShape2D_wh6qq")
 
 [node name="Garlic2" type="Node2D" parent="." unique_id=902255095]
 position = Vector2(-212, -94)
+script = ExtResource("3_r6gmb")
 
 [node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=135249420]
 offset_left = 929.0
@@ -175,6 +177,7 @@ shape = SubResource("CircleShape2D_wh6qq")
 
 [node name="Garlic3" type="Node2D" parent="." unique_id=1195871851]
 position = Vector2(-452, -155)
+script = ExtResource("3_r6gmb")
 
 [node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=183702378]
 offset_left = 929.0
@@ -197,6 +200,7 @@ shape = SubResource("CircleShape2D_wh6qq")
 
 [node name="Garlic4" type="Node2D" parent="." unique_id=1311443384]
 position = Vector2(-841, -216)
+script = ExtResource("3_r6gmb")
 
 [node name="Garlic" type="TextureRect" parent="Garlic4" unique_id=480723277]
 offset_left = 929.0
@@ -216,3 +220,6 @@ scale = Vector2(0.26, 0.26)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic4/Area2D" unique_id=1823986841]
 position = Vector2(250, 265.38464)
 shape = SubResource("CircleShape2D_wh6qq")
+
+[node name="ThemedTimer" parent="." unique_id=892998699 instance=ExtResource("6_or1ld")]
+position = Vector2(962, 5)

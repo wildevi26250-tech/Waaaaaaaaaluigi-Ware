@@ -1,5 +1,5 @@
 extends Node2D
-@onready var themed_timer: Node2D = $ThemedTimer 
+@onready var themed_timer = $ThemedTimer
 # ^^^ You dragged this in the scene by the way 
 
 
@@ -8,15 +8,17 @@ var garlic_collected = 0 # just keeping track of garlic collected
 var timer_end = false # boolean (true or false) stating whether the timer ended
 
 func _ready() -> void:
+	themed_timer.Timer(10.0)
 
 		#Below you can see that I have a function that I named. I grab a 
 		#function from it that was created in it's script and use `await` to 
 		# tell the script to wait for a signal, or for when a function finshes
 
 
-	await themed_timer.Timer(10.0) #accessing a function from this node
+	await get_tree().create_timer(10.0).timeout #accessing a function from this node
 	#after this is compeleted...
 	timer_end = true # now we're saying "oh ye you ran out of time"
+	
 
 func _process(delta: float) -> void: # running every frame brochacho
 	
