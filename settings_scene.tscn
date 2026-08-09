@@ -1,3 +1,26 @@
 [gd_scene format=3 uid="uid://c1smo3uhwpm6"]
 
+[ext_resource type="Texture2D" uid="uid://bblr3y84f0u2f" path="res://Untitled design.png" id="1_n6qfs"]
+
 [node name="settings_scene" type="Node2D" unique_id=599754848]
+
+[node name="Scrolling Background" type="Parallax2D" parent="." unique_id=1367503404]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Scrolling Background" unique_id=1961129952]
+offset_right = 2093.3333
+offset_bottom = 1290.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_n6qfs")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=950698532]
+clip_contents = false
+offset_left = 26.0
+offset_top = 165.0
+offset_right = 1129.0
+offset_bottom = 435.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "Nothing for you here"
+shortcut_keys_enabled = false

@@ -1,5 +1,5 @@
 extends Node2D
-@onready var themed_timer: Node2D = $ThemedTimer
+@onready var themed_timer: Node2D = $CanvasLayer/ThemedTimer
 @onready var brickObject = preload("res://brick.tscn")
 
 var columns = 32 # number of columns of blocks
