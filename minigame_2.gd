@@ -8,14 +8,14 @@ func _ready() -> void:
 	randomize()
 	randomize_garlic_positions()
 	
-	await themed_timer.Timer(7.0)
+	await themed_timer.Timer(Global.first_game_time)
 	#after this is completed...
 	timer_end = true 
 
 
 func _process(delta: float) -> void:
 	if buttons_pressed == 5:
-		if Global.minigames_done > 3:
+		if Global.minigames_done > 10:
 			get_tree().change_scene_to_file("res://scenes/done_screen.tscn")
 		else:
 			get_tree().change_scene_to_file("res://level_scene.tscn")

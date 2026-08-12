@@ -18,9 +18,9 @@ func hit():
 	bricks_count += 1
 	
 	if bricks_count >= 5:
-		if Global.minigames_done > 2:
+		if Global.minigames_done > 10:
 			bricks_count = 0 
 			get_tree().change_scene_to_file("res://done_screen.tscn")
 	else:
-		await get_tree().create_timer(1).timeout
-		queue_free()
+		if bricks_count >= 5:
+			get_tree().change_scene_to_file("res://level_scene.tscn")

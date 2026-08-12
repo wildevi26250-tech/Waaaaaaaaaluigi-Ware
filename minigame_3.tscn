@@ -66,4 +66,4 @@ layer = 1000
 [node name="ThemedTimer" parent="CanvasLayer" unique_id=892998699 instance=ExtResource("4_33dbb")]
 position = Vector2(873, 19)
 
-[connection signal="body_entered" from="Death_zone" to="ball" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="Death_zone" to="." method="_on_death_zone_body_entered"]

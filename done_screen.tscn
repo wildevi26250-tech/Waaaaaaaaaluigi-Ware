@@ -29,7 +29,8 @@ offset_right = 899.7
 offset_bottom = 191.5
 theme_override_constants/outline_size = 40
 theme_override_font_sizes/normal_font_size = 108
-text = "You won"
+bbcode_enabled = true
+text = "[shake rate=20 level=5]You won"
 shortcut_keys_enabled = false
 
 [node name="happy_text" type="RichTextLabel" parent="." unique_id=1249443914]
@@ -37,8 +38,9 @@ clip_contents = false
 offset_left = 429.0
 offset_top = 199.0
 offset_right = 1117.0
-offset_bottom = 283.0
+offset_bottom = 355.0
 theme_override_constants/outline_size = 27
 theme_override_font_sizes/normal_font_size = 40
-text = "(Now nintendo will make a waluigi ware game)"
+bbcode_enabled = true
+text = "[shake rate=20 level=5](Now nintendo will make a waluigi ware game)"
 shortcut_keys_enabled = false

@@ -22,5 +22,6 @@ offset_right = 1129.0
 offset_bottom = 435.0
 theme_override_constants/outline_size = 40
 theme_override_font_sizes/normal_font_size = 108
-text = "Nothing for you here"
+bbcode_enabled = true
+text = "[shake rate=20 level=5]Nothing for you here"
 shortcut_keys_enabled = false

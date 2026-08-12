@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bgj6ka3d37qpu"]
+
+[ext_resource type="AudioStream" uid="uid://cbvlbftwwyj61" path="res://waluigiware_theme.mp3" id="1_j0w4y"]
+
+[node name="Global_music" type="AudioStreamPlayer2D" unique_id=741043474]
+stream = ExtResource("1_j0w4y")
+volume_db = -25.839
+autoplay = true

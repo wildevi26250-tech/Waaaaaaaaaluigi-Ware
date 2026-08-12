@@ -10,7 +10,7 @@ var timer_end = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	setupLevel()
-	await themed_timer.Timer(20.0)
+	await themed_timer.Timer(Global.first_game_time)
 	#after this is completed...
 	timer_end = true # Replace with function body.
 	
@@ -25,6 +25,13 @@ func setupLevel():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if timer_end:
+		Global.lives -= 1
+		Global.minigames_done -=1
+		get_tree().change_scene_to_file("res://level_scene.tscn")
+
+
+func _on_death_zone_body_entered(body: Node2D) -> void:
+	if body.name == "ball" :
 		Global.lives -= 1
 		Global.minigames_done -=1
 		get_tree().change_scene_to_file("res://level_scene.tscn")
