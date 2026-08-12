@@ -1,8 +1,12 @@
 extends RichTextLabel
+signal popped_in_done
+var popped_in = false
 
 func _ready() -> void:
 	visible = false 
-	pop_out()
+	await pop_out()
+	await get_tree().create_timer(2.0).timeout
+	pop_in()
 
 func pop_out():
 	await get_tree().process_frame 
@@ -30,5 +34,6 @@ func pop_in() -> void:
 	tween.tween_property(self, "scale", Vector2(0.1, 0.1), 0.15)
 	tween.tween_property(self, "modulate:a", 0.0, 0.15)
 	await tween.finished
-	
 	visible = false
+	popped_in_done.emit()
+	var popped_in = true

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bblr3y84f0u2f" path="res://Untitled design.png" id="2_1i1uu"]
 [ext_resource type="PackedScene" uid="uid://d0ec065ia4s8v" path="res://ball.tscn" id="2_gqi5c"]
 [ext_resource type="PackedScene" uid="uid://b5lj1t8n55akc" path="res://themed_timer.tscn" id="4_33dbb"]
+[ext_resource type="Script" uid="uid://dstyi8slbj6vw" path="res://pop_out.gd" id="6_1i1uu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqi5c"]
 size = Vector2(27, 772.5)
@@ -65,5 +66,18 @@ layer = 1000
 
 [node name="ThemedTimer" parent="CanvasLayer" unique_id=892998699 instance=ExtResource("4_33dbb")]
 position = Vector2(873, 19)
+
+[node name="Hit it back" type="RichTextLabel" parent="CanvasLayer" unique_id=105974566]
+clip_contents = false
+offset_left = 302.0
+offset_top = 101.0
+offset_right = 981.0
+offset_bottom = 432.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[shake rate=20 level=5]Collect the onions[/shake]"
+shortcut_keys_enabled = false
+script = ExtResource("6_1i1uu")
 
 [connection signal="body_entered" from="Death_zone" to="." method="_on_death_zone_body_entered"]

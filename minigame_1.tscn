@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwe6qsxokx33d" path="res://Garlic.png" id="3_0hvi2"]
 [ext_resource type="Script" uid="uid://c83hdixs56tkt" path="res://garlic.gd" id="3_r6gmb"]
 [ext_resource type="PackedScene" uid="uid://b1ik40giafm24" path="res://timer_screen.tscn" id="6_or1ld"]
-[ext_resource type="Script" uid="uid://dstyi8slbj6vw" path="res://pop_out.gd" id="7_jife1"]
+[ext_resource type="Script" uid="uid://d1wove081w32v" path="res://get_the_onions.gd" id="7_jife1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfs2c"]
 size = Vector2(1236, 189.5)

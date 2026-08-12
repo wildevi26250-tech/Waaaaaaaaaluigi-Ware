@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 600 # initial speed
+var speed = 450 # initial speed
 var dir = Vector2.DOWN #which direction
 var is_active = true
 

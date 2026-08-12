@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dwe6qsxokx33d" path="res://Garlic.png" id="2_vdqgs"]
 [ext_resource type="Script" uid="uid://d067c3ogs0weg" path="res://button_1.gd" id="3_5x31c"]
 [ext_resource type="PackedScene" uid="uid://b5lj1t8n55akc" path="res://themed_timer.tscn" id="4_3qiw4"]
+[ext_resource type="Script" uid="uid://d22ugcc0dq0ow" path="res://click_the_onions.gd" id="6_gc66t"]
 
 [node name="Minigame_2" type="Node2D" unique_id=1772927586]
 script = ExtResource("1_3qiw4")
@@ -64,6 +65,19 @@ script = ExtResource("3_5x31c")
 
 [node name="ThemedTimer" parent="." unique_id=892998699 instance=ExtResource("4_3qiw4")]
 position = Vector2(907, 6)
+
+[node name="Click the onions" type="RichTextLabel" parent="." unique_id=1048083227]
+clip_contents = false
+offset_left = 302.0
+offset_top = 101.0
+offset_right = 981.0
+offset_bottom = 432.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[shake rate=20 level=5]Collect the onions[/shake]"
+shortcut_keys_enabled = false
+script = ExtResource("6_gc66t")
 
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]

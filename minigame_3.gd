@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 
 
 func _on_death_zone_body_entered(body: Node2D) -> void:
-	if body.name == "ball" :
+	if body.name == "ball":
 		Global.lives -= 1
 		Global.minigames_done -=1
 		get_tree().change_scene_to_file("res://level_scene.tscn")
