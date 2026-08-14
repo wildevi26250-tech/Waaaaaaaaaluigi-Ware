@@ -223,7 +223,7 @@ position = Vector2(250, 265.38464)
 shape = SubResource("CircleShape2D_wh6qq")
 
 [node name="ThemedTimer" parent="." unique_id=892998699 instance=ExtResource("6_or1ld")]
-position = Vector2(962, 5)
+position = Vector2(908, -4)
 
 [node name="Get the onions" type="RichTextLabel" parent="." unique_id=1671381342]
 clip_contents = false
