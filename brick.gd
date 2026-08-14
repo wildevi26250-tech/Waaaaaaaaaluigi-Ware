@@ -18,7 +18,7 @@ func hit():
 	bricks_count += 1
 	
 	if bricks_count >= 5:
-		if Global.minigames_done > 10:
+		if Global.minigames_done > 2:
 			bricks_count = 0 
 			get_tree().change_scene_to_file("res://done_screen.tscn")
 	else:
