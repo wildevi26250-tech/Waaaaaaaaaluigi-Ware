@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ci3uof3xhrstv"]
+
+[ext_resource type="Texture2D" uid="uid://b5xfb8qly8ew" path="res://Mushroom-Run.png" id="1_d4auv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv0v7"]
+atlas = ExtResource("1_d4auv")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8shhm"]
+atlas = ExtResource("1_d4auv")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6dtb"]
+atlas = ExtResource("1_d4auv")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc2rw"]
+atlas = ExtResource("1_d4auv")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn25r"]
+atlas = ExtResource("1_d4auv")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciyom"]
+atlas = ExtResource("1_d4auv")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy8bo"]
+atlas = ExtResource("1_d4auv")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvh8f"]
+atlas = ExtResource("1_d4auv")
+region = Rect2(560, 0, 80, 64)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv0v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8shhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6dtb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc2rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn25r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciyom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy8bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvh8f")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 11.0
+}]

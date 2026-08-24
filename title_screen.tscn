@@ -3,14 +3,68 @@
 [ext_resource type="Script" uid="uid://dte77xec5lw2j" path="res://title_screen.gd" id="1_ak2if"]
 [ext_resource type="Texture2D" uid="uid://dfj2ui6sbwnwn" path="res://WaluigiWare_Background.png" id="2_ak2if"]
 
+[sub_resource type="Animation" id="Animation_ak2if"]
+resource_name = "Floating"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(211, -0.25, 0, 0.25, 0, 211, -0.083333336, 0, 0, 0, 211, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(302, -0.25, 0, 0.25, 0, 290, -0.083333336, 2, 0, 0, 312, -0.083333336, -3.6666667, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_ig5kc"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(211, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(302, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05l2w"]
+_data = {
+&"Floating": SubResource("Animation_ak2if"),
+&"RESET": SubResource("Animation_ig5kc")
+}
+
 [node name="Title Screen" type="Node2D" unique_id=1279107665]
 script = ExtResource("1_ak2if")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=429080991]
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 1915.0
-offset_bottom = 1075.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_ak2if")
 
@@ -27,10 +81,10 @@ text = "[shake rate=20 level=5]Waluigi Ware"
 shortcut_keys_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1888797054]
-offset_left = 210.0
-offset_top = 270.045
-offset_right = 820.0
-offset_bottom = 494.04587
+offset_left = 211.0
+offset_top = 302.0
+offset_right = 821.0
+offset_bottom = 526.0007
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=550586222]
 layout_mode = 2
@@ -49,6 +103,10 @@ layout_mode = 2
 theme_override_constants/outline_size = 30
 theme_override_font_sizes/font_size = 46
 text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer" unique_id=1593692109]
+libraries/ = SubResource("AnimationLibrary_05l2w")
+speed_scale = 3.048
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]

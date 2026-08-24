@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://c0u7uaiecm7ae"]
 
+[ext_resource type="PackedScene" uid="uid://c5q6i62fd5drl" path="res://Swordsman.tscn" id="1_2th8j"]
+[ext_resource type="Script" uid="uid://b2f0igh6gq2or" path="res://minigame_4.gd" id="1_80u0h"]
+[ext_resource type="AudioStream" uid="uid://bh1lc3sm1rgi6" path="res://Yell.mp3" id="3_c5c30"]
+[ext_resource type="SpriteFrames" uid="uid://ci3uof3xhrstv" path="res://Monster.tres" id="4_wae4i"]
+[ext_resource type="Script" uid="uid://dw6mfprgu0fqu" path="res://monster.gd" id="5_yanj6"]
+
 [node name="minigame_4" type="Node2D" unique_id=1597465094]
+script = ExtResource("1_80u0h")
+
+[node name="Node2D" parent="." unique_id=140625515 instance=ExtResource("1_2th8j")]
+position = Vector2(-465, 203)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1060219908]
+offset_left = -75.0
+offset_top = 556.0
+offset_right = 1162.0
+offset_bottom = 663.0
+
+[node name="BeatPlayer" type="AudioStreamPlayer2D" parent="." unique_id=170738366]
+stream = ExtResource("3_c5c30")
+
+[node name="RhythmGameTimer" type="Timer" parent="." unique_id=2014587192]
+wait_time = 0.52
+
+[node name="MONSTER" type="AnimatedSprite2D" parent="." unique_id=1691705082 node_paths=PackedStringArray("MONSTER")]
+position = Vector2(458, 436)
+scale = Vector2(3.755, 3.755)
+sprite_frames = ExtResource("4_wae4i")
+animation = &"new_animation"
+frame_progress = 0.08144443
+script = ExtResource("5_yanj6")
+MONSTER = NodePath(".")

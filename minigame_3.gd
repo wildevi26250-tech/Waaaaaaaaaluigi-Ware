@@ -1,6 +1,7 @@
 extends Node2D
 @onready var themed_timer: Node2D = $CanvasLayer/ThemedTimer
 @onready var brickObject = preload("res://brick.tscn")
+@onready var brick: RigidBody2D = $brick
 
 var columns = 32 # number of columns of blocks
 var rows = 7 # number of rows of blocks
@@ -27,6 +28,7 @@ func _process(delta: float) -> void:
 	if timer_end:
 		Global.lives -= 1
 		Global.minigames_done -=1
+		brick.bricks_count = 0
 		get_tree().change_scene_to_file("res://level_scene.tscn")
 
 
