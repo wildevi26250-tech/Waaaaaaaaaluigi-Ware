@@ -12,10 +12,10 @@ var non_stab = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	MONSTER3.play()
+	MONSTER2.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if MONSTER3.non_stab == true:
+	if MONSTER2.non_stab == true:
 		position.x -= Speed * delta

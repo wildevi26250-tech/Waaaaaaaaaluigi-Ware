@@ -3,6 +3,8 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_sfx: AudioStreamPlayer2D = $HitSFX
+@export var hitbox: CollisionShape2D
+var hit_box_on = false
 
 func _ready() -> void:
 	sprite_2d.show()
