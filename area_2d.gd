@@ -4,10 +4,9 @@ extends Area2D
 @export var anim_tree: AnimatedSprite2D
 
 @onready var monster: AnimatedSprite2D = %MONSTER
-@onready var monster2: AnimatedSprite2D = %MONSTER2
-@onready var monster3: AnimatedSprite2D = %MONSTER3
 
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D 
+
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D1
 
 func _ready() -> void:
 	pass
@@ -27,4 +26,4 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass 
 
 func _on_monster_animation_finished() -> void:
-	queue_free()
+	pass

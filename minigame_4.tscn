@@ -2,23 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://c5q6i62fd5drl" path="res://Swordsman.tscn" id="1_2th8j"]
 [ext_resource type="Script" uid="uid://b2f0igh6gq2or" path="res://minigame_4.gd" id="1_80u0h"]
+[ext_resource type="Texture2D" uid="uid://bblr3y84f0u2f" path="res://Untitled design.png" id="2_s0wxk"]
 [ext_resource type="Script" uid="uid://bcyijqxp7ksr3" path="res://hitbox.gd" id="3_yanj6"]
 [ext_resource type="SpriteFrames" uid="uid://ci3uof3xhrstv" path="res://Monster.tres" id="4_wae4i"]
 [ext_resource type="Script" uid="uid://cift56y5a668t" path="res://monster1.gd" id="5_s0wxk"]
 [ext_resource type="Script" uid="uid://d4agifh2pn6c8" path="res://area_2d.gd" id="5_wae4i"]
-[ext_resource type="Script" uid="uid://dw6mfprgu0fqu" path="res://monster.gd" id="5_yanj6"]
-[ext_resource type="Script" uid="uid://8psa54cr633t" path="res://area_2d2.gd" id="6_f4xpp"]
-[ext_resource type="Script" uid="uid://cj882dp6e7tk4" path="res://monster_2.gd" id="7_f4xpp"]
+[ext_resource type="Script" uid="uid://dstyi8slbj6vw" path="res://pop_out.gd" id="7_8qm3o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0wxk"]
-radius = 15.978699
-height = 36.218384
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4xpp"]
-radius = 15.978699
-height = 36.218384
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thd57"]
 radius = 15.978699
 height = 36.218384
 
@@ -28,13 +19,24 @@ size = Vector2(82, 28)
 [node name="minigame_4" type="Node2D" unique_id=1597465094]
 script = ExtResource("1_80u0h")
 
+[node name="Scrolling Background" type="Parallax2D" parent="." unique_id=614436269]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Scrolling Background" unique_id=763558941]
+offset_right = 2093.3333
+offset_bottom = 1290.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_s0wxk")
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1060219908]
 offset_left = -75.0
 offset_top = 556.0
 offset_right = 1162.0
 offset_bottom = 663.0
+color = Color(0.35475796, 0.5614825, 0.33113763, 1)
 
-[node name="MONSTER" type="AnimatedSprite2D" parent="." unique_id=1691705082 node_paths=PackedStringArray("MONSTER", "MONSTER2", "MONSTER3")]
+[node name="MONSTER" type="AnimatedSprite2D" parent="." unique_id=1691705082 node_paths=PackedStringArray("MONSTER")]
 unique_name_in_owner = true
 position = Vector2(620, 437)
 scale = Vector2(3.755, 3.755)
@@ -43,58 +45,15 @@ animation = &"new_animation"
 frame_progress = 0.08144443
 script = ExtResource("5_s0wxk")
 MONSTER = NodePath(".")
-MONSTER2 = NodePath("../MONSTER2")
-MONSTER3 = NodePath("../MONSTER3")
 
 [node name="Area2D" type="Area2D" parent="MONSTER" unique_id=136439563 node_paths=PackedStringArray("anim_tree")]
-collision_layer = 4
+collision_layer = 2
 script = ExtResource("5_wae4i")
 anim_tree = NodePath("..")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MONSTER/Area2D" unique_id=1340209682]
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="MONSTER/Area2D" unique_id=1340209682]
 position = Vector2(-0.5326231, 15.712382)
 shape = SubResource("CapsuleShape2D_s0wxk")
-
-[node name="MONSTER2" type="AnimatedSprite2D" parent="." unique_id=1351557075 node_paths=PackedStringArray("MONSTER", "MONSTER2", "MONSTER3")]
-unique_name_in_owner = true
-position = Vector2(864.00006, 437.00003)
-scale = Vector2(3.755, 3.755)
-sprite_frames = ExtResource("4_wae4i")
-animation = &"new_animation"
-frame_progress = 0.08144443
-script = ExtResource("7_f4xpp")
-MONSTER = NodePath("../MONSTER")
-MONSTER2 = NodePath(".")
-MONSTER3 = NodePath("../MONSTER3")
-
-[node name="Area2D" type="Area2D" parent="MONSTER2" unique_id=983859431]
-collision_layer = 2
-script = ExtResource("6_f4xpp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MONSTER2/Area2D" unique_id=374762289]
-position = Vector2(-0.5326231, 15.712382)
-shape = SubResource("CapsuleShape2D_f4xpp")
-
-[node name="MONSTER3" type="AnimatedSprite2D" parent="." unique_id=1005093334 node_paths=PackedStringArray("MONSTER", "MONSTER2", "MONSTER3")]
-unique_name_in_owner = true
-position = Vector2(743, 437)
-scale = Vector2(3.755, 3.755)
-sprite_frames = ExtResource("4_wae4i")
-animation = &"new_animation"
-frame_progress = 0.08144443
-script = ExtResource("5_yanj6")
-MONSTER = NodePath("../MONSTER")
-MONSTER2 = NodePath("../MONSTER2")
-MONSTER3 = NodePath(".")
-
-[node name="Area2D" type="Area2D" parent="MONSTER3" unique_id=1150935882 node_paths=PackedStringArray("anim_tree")]
-collision_layer = 8
-script = ExtResource("5_wae4i")
-anim_tree = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MONSTER3/Area2D" unique_id=1036403116]
-position = Vector2(-0.5326231, 15.712382)
-shape = SubResource("CapsuleShape2D_thd57")
 
 [node name="Node2D" parent="." unique_id=140625515 instance=ExtResource("1_2th8j")]
 position = Vector2(-465, 203.00002)
@@ -109,10 +68,19 @@ position = Vector2(631, 327)
 shape = SubResource("RectangleShape2D_c5c30")
 disabled = true
 
+[node name="Hit it back" type="RichTextLabel" parent="." unique_id=1712699702]
+clip_contents = false
+offset_left = 302.0
+offset_top = 101.0
+offset_right = 981.0
+offset_bottom = 432.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[shake rate=20 level=5]STAB HIM[/shake]"
+shortcut_keys_enabled = false
+script = ExtResource("7_8qm3o")
+
 [connection signal="animation_finished" from="MONSTER" to="MONSTER/Area2D" method="_on_monster_animation_finished"]
 [connection signal="area_entered" from="MONSTER/Area2D" to="MONSTER" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="MONSTER/Area2D" to="MONSTER/Area2D" method="_on_area_entered"]
-[connection signal="area_entered" from="MONSTER2/Area2D" to="MONSTER2" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="MONSTER2/Area2D" to="MONSTER2/Area2D" method="_on_area_entered"]
-[connection signal="area_entered" from="MONSTER3/Area2D" to="MONSTER3" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="MONSTER3/Area2D" to="MONSTER3/Area2D" method="_on_area_entered"]

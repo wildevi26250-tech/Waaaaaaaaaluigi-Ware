@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ctyd8crcom1xe"]
+
+[ext_resource type="SpriteFrames" uid="uid://ci3uof3xhrstv" path="res://Monster.tres" id="1_q6r6c"]
+[ext_resource type="Script" uid="uid://cj882dp6e7tk4" path="res://monster_2.gd" id="2_kdubu"]
+[ext_resource type="Script" uid="uid://8psa54cr633t" path="res://area_2d2.gd" id="3_d21ai"]
+[ext_resource type="Script" uid="uid://dw6mfprgu0fqu" path="res://monster.gd" id="4_rj586"]
+[ext_resource type="Script" uid="uid://cuscejp2rslr5" path="res://area_2d3.gd" id="5_4d7sh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ir8iy"]
+radius = 15.978699
+height = 36.218384
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqns4"]
+radius = 15.978699
+height = 36.218384
+
+[node name="Node2D" type="Node2D" unique_id=1052923632]
+
+[node name="MONSTER2" type="AnimatedSprite2D" parent="." unique_id=731677303 node_paths=PackedStringArray("MONSTER", "MONSTER2", "MONSTER3")]
+unique_name_in_owner = true
+position = Vector2(864.00006, 437.00003)
+scale = Vector2(3.755, 3.755)
+sprite_frames = ExtResource("1_q6r6c")
+animation = &"new_animation"
+frame_progress = 0.08144443
+script = ExtResource("2_kdubu")
+MONSTER = NodePath("")
+MONSTER2 = NodePath(".")
+MONSTER3 = NodePath("")
+
+[node name="Area2D" type="Area2D" parent="MONSTER2" unique_id=1717584706]
+collision_layer = 4
+script = ExtResource("3_d21ai")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MONSTER2/Area2D" unique_id=1534284525]
+position = Vector2(-0.5326231, 15.712382)
+shape = SubResource("CapsuleShape2D_ir8iy")
+
+[node name="MONSTER3" type="AnimatedSprite2D" parent="." unique_id=311977997 node_paths=PackedStringArray("MONSTER", "MONSTER2", "MONSTER3")]
+unique_name_in_owner = true
+position = Vector2(743, 437)
+scale = Vector2(3.755, 3.755)
+sprite_frames = ExtResource("1_q6r6c")
+animation = &"new_animation"
+frame_progress = 0.08144443
+script = ExtResource("4_rj586")
+MONSTER = NodePath("")
+MONSTER2 = NodePath("")
+MONSTER3 = NodePath(".")
+
+[node name="Area2D" type="Area2D" parent="MONSTER3" unique_id=1274210547]
+collision_layer = 8
+script = ExtResource("5_4d7sh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MONSTER3/Area2D" unique_id=631053372]
+position = Vector2(-0.5326231, 15.712382)
+shape = SubResource("CapsuleShape2D_hqns4")
+
+[connection signal="area_entered" from="MONSTER2/Area2D" to="MONSTER2" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="MONSTER2/Area2D" to="MONSTER2/Area2D" method="_on_area_entered"]
+[connection signal="area_entered" from="MONSTER3/Area2D" to="MONSTER3" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="MONSTER3/Area2D" to="MONSTER3/Area2D" method="_on_area_entered"]

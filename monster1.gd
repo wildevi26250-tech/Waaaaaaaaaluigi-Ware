@@ -2,8 +2,7 @@ extends AnimatedSprite2D
 
 @onready var col2d: CollisionShape2D = $"../Node2D/hitbox/CollisionShape2D"
 @export var MONSTER: AnimatedSprite2D
-@export var MONSTER2: AnimatedSprite2D
-@export var MONSTER3: AnimatedSprite2D
+@onready var timer: Timer= $"../Timer"
 
 var Speed = 200
 var non_stab = true
@@ -20,4 +19,4 @@ func _process(delta: float) -> void:
 	if non_stab == true:
 		position.x -= Speed * delta
 	if non_stab == false:
-		pass
+		$Area2D/CollisionShape2D1.set_deferred("disabled", true)

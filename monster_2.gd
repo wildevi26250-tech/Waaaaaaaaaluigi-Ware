@@ -19,3 +19,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if MONSTER2.non_stab == true:
 		position.x -= Speed * delta
+	if MONSTER2.non_stab == true:
+		$Area2D/CollisionShape2D2.set_deferred("disabled", true)

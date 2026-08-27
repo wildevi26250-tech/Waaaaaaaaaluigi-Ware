@@ -1,11 +1,30 @@
 extends Area2D
 
+@export var health := 30
+@export var anim_tree: AnimatedSprite2D
 
-# Called when the node enters the scene tree for the first time.
+@onready var monster: AnimatedSprite2D = %MONSTER
+@onready var monster2: AnimatedSprite2D = %MONSTER2
+@onready var monster3: AnimatedSprite2D = %MONSTER3
+
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D3
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player_attack"):
+		print("hit")
+		
+		if anim_tree:
+			anim_tree.play("die")
+		
+		collision_shape.set_deferred("disabled", true)
+		
+		monster3.non_stab = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	pass 
+
+func _on_monster_animation_finished() -> void:
 	pass
