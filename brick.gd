@@ -14,13 +14,10 @@ func _process(delta: float) -> void:
 func hit():
 	$Sprite2D.visible = false 
 	$CollisionShape2D.disabled = true 
+	print ("hit")
 	
 	bricks_count += 1
 	
 	if bricks_count >= 5:
-		if Global.minigames_done > 3:
-			bricks_count = 0 
-			get_tree().change_scene_to_file("res://done_screen.tscn")
-	else:
-		if bricks_count >= 5:
-			get_tree().change_scene_to_file("res://level_scene.tscn")
+		print("hit 5 blocks")
+		get_tree().change_scene_to_file("res://level_scene.tscn")

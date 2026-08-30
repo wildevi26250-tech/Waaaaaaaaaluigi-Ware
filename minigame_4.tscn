@@ -14,7 +14,7 @@ radius = 15.978699
 height = 36.218384
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5c30"]
-size = Vector2(82, 28)
+size = Vector2(80, 28)
 
 [node name="minigame_4" type="Node2D" unique_id=1597465094]
 script = ExtResource("1_80u0h")
@@ -64,7 +64,8 @@ collision_mask = 2
 script = ExtResource("3_yanj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/hitbox" unique_id=938482810]
-position = Vector2(631, 327)
+position = Vector2(615.99994, 328)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_c5c30")
 disabled = true
 
