@@ -7,6 +7,7 @@ extends Area2D
 
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D1
+var monkil = 0
 
 func _ready() -> void:
 	pass
@@ -21,9 +22,11 @@ func _on_area_entered(area: Area2D) -> void:
 		collision_shape.set_deferred("disabled", true)
 		
 		monster.non_stab = false
+		monkil += 1
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass 
 
 func _on_monster_animation_finished() -> void:
-	pass
+	if monkil == 1:
+		get_tree().change_scene_to_file("res://done_screen.tscn")

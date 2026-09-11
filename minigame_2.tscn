@@ -20,9 +20,22 @@ offset_bottom = 1290.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_ksr4o")
 
+[node name="Click the onions" type="RichTextLabel" parent="." unique_id=1048083227]
+clip_contents = false
+offset_left = 302.0
+offset_top = 101.0
+offset_right = 981.0
+offset_bottom = 432.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[shake rate=20 level=5]Collect the onions[/shake]"
+shortcut_keys_enabled = false
+script = ExtResource("6_gc66t")
+
 [node name="Button_1" type="TextureButton" parent="." unique_id=1194750171]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 500.0
+offset_bottom = 500.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_vdqgs")
 script = ExtResource("3_5x31c")
@@ -65,19 +78,6 @@ script = ExtResource("3_5x31c")
 
 [node name="ThemedTimer" parent="." unique_id=892998699 instance=ExtResource("4_3qiw4")]
 position = Vector2(907, 6)
-
-[node name="Click the onions" type="RichTextLabel" parent="." unique_id=1048083227]
-clip_contents = false
-offset_left = 302.0
-offset_top = 101.0
-offset_right = 981.0
-offset_bottom = 432.0
-theme_override_constants/outline_size = 40
-theme_override_font_sizes/normal_font_size = 108
-bbcode_enabled = true
-text = "[shake rate=20 level=5]Collect the onions[/shake]"
-shortcut_keys_enabled = false
-script = ExtResource("6_gc66t")
 
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]

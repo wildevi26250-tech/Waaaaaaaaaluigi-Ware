@@ -2,7 +2,6 @@ extends AnimatedSprite2D
 
 @onready var col2d: CollisionShape2D = $"../Node2D/hitbox/CollisionShape2D"
 @export var MONSTER: AnimatedSprite2D
-@onready var timer: Timer= $"../Timer"
 
 var Speed = 200
 var non_stab = true
