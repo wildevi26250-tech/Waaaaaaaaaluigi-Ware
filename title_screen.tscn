@@ -92,12 +92,6 @@ theme_override_constants/outline_size = 30
 theme_override_font_sizes/font_size = 46
 text = "Start game"
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=794094915]
-layout_mode = 2
-theme_override_constants/outline_size = 30
-theme_override_font_sizes/font_size = 46
-text = "Settings"
-
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1803032867]
 layout_mode = 2
 theme_override_constants/outline_size = 30
@@ -109,5 +103,4 @@ libraries/ = SubResource("AnimationLibrary_05l2w")
 speed_scale = 3.048
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
